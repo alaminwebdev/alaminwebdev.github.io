@@ -67,7 +67,7 @@
                         <div class="contact-info">
                             <p class="contact-title">Email</p>
 
-                            <a href="mailto:richard@example.com" class="contact-link" id="contact-email" ></a>
+                            <a href="#" class="contact-link" id="contact-email"></a>
                         </div>
                     </li>
 
@@ -90,7 +90,7 @@
 
                         <div class="contact-info">
                             <p class="contact-title">Birthday</p>
-                            <time datetime="1982-06-23" id="contact-dob">June 23, 1982</time>
+                            <time datetime="" id="contact-dob"></time>
                         </div>
                     </li>
 
@@ -109,9 +109,9 @@
                 <div class="separator"></div>
 
                 <ul class="social-list">
-                    <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
-                    <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
-                    <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    <li class="social-item"><a href="#" class="social-link" target="_blank" id="social-facebook"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li class="social-item"><a href="#" class="social-link" target="_blank" id="social-linkedin"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                    <li class="social-item"><a href="#" class="social-link" target="_blank" id="social-github"><ion-icon name="logo-github"></ion-icon></a></li>
                 </ul>
             </div>
         </aside>
@@ -133,9 +133,7 @@
                 </header>
 
                 <section class="about-text">
-                    <p>I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.</p>
-                    <p>My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-                        across your message and identity in the most creative way. I created web design for many famous brand companies.</p>
+                    <p id="bio-description"></p>
                 </section>
 
                 <section class="service">
@@ -767,60 +765,96 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                // Display BIO data
-                // const bio = document.getElementById('bio');
-                // bio.innerHTML = `
-                //     <h2>${data.BIO.title}</h2>
-                //     <p><strong>Short Bio:</strong> ${data.BIO.short_bio}</p>
-                //     <p><strong>Long Bio:</strong> ${data.BIO.long_bio}</p>
-                // `;
 
-                // // Display Education data
-                // const education = document.getElementById('education');
-                // let educationHtml = '<h3>Education</h3>';
-                // data.EDUCATION.forEach(edu => {
-                //     educationHtml += `
-                //         <div>
-                //             <h4>${edu.degree}</h4>
-                //             <p><strong>Year:</strong> ${edu.passing_year} (${edu.session})</p>
-                //             <p><strong>Institute:</strong> ${edu.institute}</p>
-                //             <p>${edu.description}</p>
-                //         </div>
-                //     `;
-                // });
-                // education.innerHTML = educationHtml;
-
-                // // Display Experience data
-                // const experience = document.getElementById('experience');
-                // let experienceHtml = '<h3>Experience</h3>';
-                // data.EXPERIENCE.forEach(exp => {
-                //     experienceHtml += `
-                //         <div>
-                //             <h4>${exp.designation} at ${exp.company}</h4>
-                //             <p><strong>Start Date:</strong> ${exp.start_date}</p>
-                //             <p><strong>End Date:</strong> ${exp.end_date ? exp.end_date : 'Present'}</p>
-                //             <ul>${exp.responsibilities.map(res => `<li>${res}</li>`).join('')}</ul>
-                //         </div>
-                //     `;
-                // });
-                // experience.innerHTML = experienceHtml;
-
-                // Display Contact data
-                const contactEmail = document.getElementById('contact-email');
-                const contactPhone = document.getElementById('contact-phone');
-                const contactDob = document.getElementById('contact-dob');
-                const contactLocation = document.getElementById('contact-location');
-
-                contactEmail.textContent = data.CONTACT.email;
-                contactEmail.href = `mailto:${data.CONTACT.email}`; 
-
-                contactPhone.textContent = data.CONTACT.phone;
-                contactPhone.href = `tel:${data.CONTACT.phone}`;
-                
-                contactDob.textContent = data.CONTACT.dob;
-                contactLocation.textContent = data.CONTACT.location;
+                // Populate all sections dynamically
+                populateBio(data.BIO);
+                // populateEducation(data.EDUCATION);
+                // populateExperience(data.EXPERIENCE);
+                populateContact(data.CONTACT);
+                populateSocial(data.SOCIAL);
             });
+
+        // Function to populate BIO section
+        function populateBio(bioData) {
+            if (!bioData) return;
+            const bio = document.getElementById('bio-description');
+            bio.innerHTML = bioData.description;
+        }
+
+        // Function to populate Education section
+        // function populateEducation(educationData) {
+        //     if (!educationData) return;
+        //     const education = document.getElementById('education');
+        //     education.innerHTML = '<h3>Education</h3>' + educationData.map(edu => `
+        //         <div>
+        //             <h4>${edu.degree}</h4>
+        //             <p><strong>Year:</strong> ${edu.passing_year} (${edu.session})</p>
+        //             <p><strong>Institute:</strong> ${edu.institute}</p>
+        //             <p>${edu.description}</p>
+        //         </div>
+        //     `).join('');
+        // }
+
+        // Function to populate Experience section
+        // function populateExperience(experienceData) {
+        //     if (!experienceData) return;
+        //     const experience = document.getElementById('experience');
+        //     experience.innerHTML = '<h3>Experience</h3>' + experienceData.map(exp => `
+        //         <div>
+        //             <h4>${exp.designation} at ${exp.company}</h4>
+        //             <p><strong>Start Date:</strong> ${exp.start_date}</p>
+        //             <p><strong>End Date:</strong> ${exp.end_date ? exp.end_date : 'Present'}</p>
+        //             <ul>${exp.responsibilities.map(res => `<li>${res}</li>`).join('')}</ul>
+        //         </div>
+        //     `).join('');
+        // }
+
+        // Function to populate Contact section
+        function populateContact(contactData) {
+            if (!contactData) return;
+
+            const contactElements = {
+                email: document.getElementById('contact-email'),
+                phone: document.getElementById('contact-phone'),
+                dob: document.getElementById('contact-dob'),
+                location: document.getElementById('contact-location')
+            };
+
+            const { email, phone, dob, location } = contactData;
+
+            contactElements.email.textContent = email.split('@')[0];
+            contactElements.email.href = `mailto:${email}`;
+
+            contactElements.phone.textContent = phone;
+            contactElements.phone.href = `tel:${phone}`;
+
+            contactElements.location.textContent = location;
+
+            // Format DOB
+            const [year, month, day] = dob.split('/');
+            const formattedDob = new Date(year, month - 1, day)
+                .toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            contactElements.dob.textContent = formattedDob;
+            contactElements.dob.setAttribute('datetime', `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
+        }
+
+        // Function to populate Social Media Links
+        function populateSocial(socialData) {
+            if (!socialData) return;
+
+            const socialElements = {
+                facebook: document.getElementById('social-facebook'),
+                linkedin: document.getElementById('social-linkedin'),
+                github: document.getElementById('social-github')
+            };
+
+            Object.entries(socialData).forEach(([key, url]) => {
+                if (socialElements[key]) socialElements[key].href = url;
+            });
+        }
     </script>
+
 </body>
 
 </html>

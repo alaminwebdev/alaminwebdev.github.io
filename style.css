@@ -385,19 +385,16 @@ article.active {
 
 .contact-info :is(.contact-link, time, address) {
     color: var(--white2);
-    font-size: var(--fs7);
+    font-size: var(--fs8);
 }
 
 .contact-info address {
     font-style: normal;
 }
-.contact-info #contact-email {
-    font-size: var(--fs10);
-}
 
 .contact-title {
     color: var(--light-gray70);
-    font-size: var(--fs8);
+    font-size: var(--fs7);
     text-transform: uppercase;
     margin-bottom: 2px;
 }
@@ -475,9 +472,6 @@ article.active {
 
 .about-text p {
     margin-bottom: 15px;
-    text-align: justify;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .service {
@@ -1771,7 +1765,6 @@ textarea.form-input::-webkit-realizer {
     }
 
     .contact-info :is(.contact-link, time, address) {
-        --fs7: 14px;
         font-weight: var(--fw300);
     }
 
