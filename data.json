@@ -1,14 +1,6 @@
 {
     "EDUCATION": [
         {
-            "degree": "Professional Web Design & Development",
-            "passing_year": 2022,
-            "session": "2021-2022",
-            "institute": "Creative IT Institute , Dhaka",
-            "type": "Training",
-            "description": "Creative IT is an institution where empowering the community with an excellent standard of learning is what they desire. They endeavour for the continuous improvement of their leaders who will work to construct a better future."
-        },
-        {
             "degree": "Bachelor of Science in Computer Science and Engineering",
             "passing_year": 2022,
             "session": "2017-2021",
@@ -23,12 +15,20 @@
             "institute": "Patuakhali Government College",
             "type": "Education",
             "description": "Patuakhali Government College is a educational institution in Patuakhali district of Barisal division."
+        },
+        {
+            "degree": "Professional Web Design & Development",
+            "passing_year": 2022,
+            "session": "2021-2022",
+            "institute": "Creative IT Institute , Dhaka",
+            "type": "Training",
+            "description": "Creative IT is an institution where empowering the community with an excellent standard of learning is what they desire. They endeavour for the continuous improvement of their leaders who will work to construct a better future."
         }
     ],
     "EXPERIENCE": [
         {
             "designation": "Software Engineer",
-            "start_date": "01-07-2024",
+            "start_date": "2024-07-01",
             "end_date": null,
             "company": "Ambala IT",
             "responsibilities": [
@@ -40,8 +40,8 @@
         },
         {
             "designation": "Full-Stack Web Developer",
-            "start_date": "01-03-2023",
-            "end_date": "30-06-2024",
+            "start_date": "2023-03-01",
+            "end_date": "2024-06-30",
             "company": "Nano Information Technology (Nanosoft)",
             "responsibilities": [
                 "Leveraged my expertise in Laravel to craft web applications for seamless user experiences.",
@@ -53,8 +53,8 @@
         },
         {
             "designation": "Executive - Support Engineer",
-            "start_date": "01-09-2022",
-            "end_date": "28-02-2023",
+            "start_date": "2022-09-02",
+            "end_date": "2023-02-28",
             "company": "One Sky Communications Limited",
             "responsibilities": [
                 "Provided technical support for ISP infrastructure, routers, and switches to end-users based on requirements.",
