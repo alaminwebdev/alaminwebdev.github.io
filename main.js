@@ -11,7 +11,7 @@ sidebarBtn.addEventListener("click", function() {elementToggleFunc(sidebar); })
 
 //Activating Modal-testimonial
 
-const testimonialsItem = document.querySelectorAll('[data-testimonials-item]');
+const highlightsItem = document.querySelectorAll('[data-highlights-item]');
 const modalContainer = document.querySelector('[data-modal-container]');
 const modalCloseBtn = document.querySelector('[data-modal-close-btn]');
 const overlay = document.querySelector('[data-overlay]');
@@ -20,26 +20,26 @@ const modalImg = document.querySelector('[data-modal-img]');
 const modalTitle = document.querySelector('[data-modal-title]');
 const modalText = document.querySelector('[data-modal-text]');
 
-const testimonialsModalFunc = function () {
+const highlightsModalFunc = function () {
     modalContainer.classList.toggle('active');
     overlay.classList.toggle('active');
 }
 
-for (let i = 0; i < testimonialsItem.length; i++) {
-    testimonialsItem[i].addEventListener('click', function () {
-        modalImg.src = this.querySelector('[data-testimonials-avatar]').src;
-        modalImg.alt = this.querySelector('[data-testimonials-avatar]').alt;
-        modalTitle.innerHTML = this.querySelector('[data-testimonials-title]').innerHTML;
-        modalText.innerHTML = this.querySelector('[data-testimonials-text]').innerHTML;
+for (let i = 0; i < highlightsItem.length; i++) {
+    highlightsItem[i].addEventListener('click', function () {
+        modalImg.src = this.querySelector('[data-highlights-avatar]').src;
+        modalImg.alt = this.querySelector('[data-highlights-avatar]').alt;
+        modalTitle.innerHTML = this.querySelector('[data-highlights-title]').innerHTML;
+        modalText.innerHTML = this.querySelector('[data-highlights-text]').innerHTML;
 
-        testimonialsModalFunc();
+        highlightsModalFunc();
     })
 }
 
 //Activating close button in modal-testimonial
 
-modalCloseBtn.addEventListener('click', testimonialsModalFunc);
-overlay.addEventListener('click', testimonialsModalFunc);
+modalCloseBtn.addEventListener('click', highlightsModalFunc);
+overlay.addEventListener('click', highlightsModalFunc);
 
 //Activating Filter Select and filtering options
 
