@@ -309,83 +309,58 @@
                 <section class="skill">
                     <h3 class="h3 skills-title">My Skills</h3>
 
-                    <div class="scroller" data-speed="medium">
+                    <div class="scroller" data-speed="fast">
                         <div class="scroller-inner">
-                            <div class="">
-                                <img src="images/internet.png" class="">
+                            <div class="skill-section">
+                                <img src="images/skills/HTML.svg" class="">
                             </div>
-                            <div class="">
-                                <img src="images/internet.png" class="">
+                            <div class="skill-section">
+                                <img src="images/skills/CSS.svg" class="">
                             </div>
-                            <div class="">
-                                <img src="images/internet.png" class="">
+                            <div class="skill-section">
+                                <img src="images/skills/JavaScript.svg" class="">
                             </div>
-                            <div class="">
-                                <img src="images/internet.png" class="">
+                            <div class="skill-section">
+                                <img src="images/skills/JQuery.svg" class="">
                             </div>
-                            <div class="">
-                                <img src="images/internet.png" class="">
+                            <div class="skill-section">
+                                <img src="images/skills/json.svg" class="">
                             </div>
-                            <div class="">
-                                <img src="images/internet.png" class="">
+                            <div class="skill-section">
+                                <img src="images/skills/PHP-Dark.svg" class="">
                             </div>
-                            <div class="">
-                                <img src="images/internet.png" class="">
+                            <div class="skill-section">
+                                <img src="images/skills/Laravel-Dark.svg" class="">
                             </div>
-                            <div class="">
-                                <img src="images/internet.png" class="">
+                            <div class="skill-section">
+                                <img src="images/skills/MySQL-Dark.svg" class="">
                             </div>
-                            <div class="">
-                                <img src="images/internet.png" class="">
+                            <div class="skill-section">
+                                <img src="images/skills/Github-Dark.svg" class="">
+                            </div>
+                            <div class="skill-section">
+                                <img src="images/skills/GitLab-Dark.svg" class="">
+                            </div>
+                            <div class="skill-section">
+                                <img src="images/skills/VSCode-Dark.svg" class="">
+                            </div>
+                            <div class="skill-section">
+                                <img src="images/skills/BitBucket-Light.svg" class="">
+                            </div>
+                            <div class="skill-section">
+                                <img src="images/skills/Vite-Dark.svg" class="">
+                            </div>
+                            <div class="skill-section">
+                                <img src="images/skills//Postman.svg" class="">
+                            </div>
+                            <div class="skill-section">
+                                <img src="images/skills/Git.svg" class="">
+                            </div>
+                            <div class="skill-section">
+                                <img src="images/skills/TailwindCSS-Dark.svg" class="">
                             </div>
                         </div>
                     </div>
-
-                    <!-- <ul class="skills-list content-card">
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">Web Design</h5>
-                                <data value="80">80%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 80%;"></div>
-                            </div>
-                        </li>
-
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">Graphic Design</h5>
-                                <data value="70">70%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 70%;"></div>
-                            </div>
-                        </li>
-
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">Branding</h5>
-                                <data value="90">90%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 90%;"></div>
-                            </div>
-                        </li>
-
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">WordPress</h5>
-                                <data value="50">50%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 50%;"></div>
-                            </div>
-                        </li>
-                    </ul> -->
                 </section>
             </article>
 
@@ -566,7 +541,7 @@
                 <section class="mapbox" data-mapbox>
                     <figure>
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7519.634959221802!2d90.35255501708234!3d23.771933397685647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0a880f7909d%3A0xe8d7d2484b62becc!2sShyamoli%2C%20Dhaka!5e1!3m2!1sen!2sbd!4v1740023369393!5m2!1sen!2sbd"
                             width="400" height="300" loading="lazy"></iframe>
                     </figure>
                 </section>
@@ -753,6 +728,42 @@
                 });
             });
         }
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your Public Key
+        emailjs.init('0X5Smni1W1DqTf52F');
+        // Enabling Contact Form
+        const form = document.querySelector('[data-form]');
+        const formBtn = document.querySelector('[data-form-btn]');
+        const originalBtnText = formBtn.innerHTML;
+        form.addEventListener('input', () => {
+            if (form.checkValidity()) {
+                formBtn.removeAttribute('disabled');
+            } else {
+                formBtn.setAttribute('disabled', '');
+            }
+        });
+
+        // Add event listener for form submission
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            formBtn.setAttribute('disabled', true);
+            formBtn.innerHTML = 'Submitting...';
+            // Send form data using EmailJS
+            emailjs.sendForm('service_41uforg', 'template_1twutcr', this)
+                .then(function (response) {
+                    alert('SUCCESS! Your message has been sent.', response.status, response.text);
+                    form.reset(); 
+                    formBtn.removeAttribute('disabled');
+                    formBtn.innerHTML = originalBtnText;
+                }, function (error) {
+                    alert('FAILED... Please try again.', error);
+                    formBtn.removeAttribute('disabled');
+                    formBtn.innerHTML = originalBtnText;
+                });
+        });
+
     </script>
 
 </body>
