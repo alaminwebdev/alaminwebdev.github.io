@@ -162,18 +162,17 @@
                         <li class="highlights-item">
                             <div class="content-card" data-highlights-item>
                                 <figure class="highlights-avatar-box">
-                                    <img src="https://i.postimg.cc/DwY0yHtx/avatar-2.png" alt="Career Summary" data-highlights-avatar width="60">
+                                    <img src="images/project.png" alt="Projects" data-highlights-avatar width="60">
                                 </figure>
-                
-                                <h4 class="h4 highlights-item-title" data-highlights-title>Career Summary</h4>
-                
+                        
+                                <h4 class="h4 highlights-item-title" data-highlights-title>Projects</h4>
+                        
                                 <div class="highlights-text" data-highlights-text>
-                                    <p>I graduated with a Bachelor of Science in Computer Science and Engineering from Daffodil Institute of IT in 2022. Since then, I have worked across multiple roles, currently as a Software Engineer at Ambala IT, where I specialize in back-end and front-end development using PHP, Laravel, Vue.js, and MySQL.</p>
-                                    <br>
-                                    <p>Previously, I worked as a Full-Stack Web Developer at Nano Information Technology (Nanosoft) and as a Support Engineer at One Sky Communications Limited, gaining extensive experience in both web development and technical support.</p>
+                                    <p id="projects"></p>
                                 </div>
                             </div>
                         </li>
+                        
                     </ul>
                 </section>
                 
@@ -562,8 +561,10 @@
             if (!bioData) return;
             const bio = document.getElementById('bio-description');
             const careerSummary = document.getElementById('career-summary');
+            const projects = document.getElementById('projects');
             bio.innerHTML = bioData.description;
             careerSummary.innerHTML = bioData.career_summary;
+            projects.innerHTML = bioData.projects;
         }
 
         // Function to populate Education section
