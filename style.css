@@ -138,7 +138,7 @@ article {
 }
 
 .sidebar.active {
-    max-height: 405px;
+    max-height: 420px;
 }
 
 .separator {
@@ -403,13 +403,13 @@ article.active {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     padding-bottom: 4px;
     padding-left: 7px;
 }
 
 .social-item .social-link {
-    color: var(--light-gray70);
+    color: var(--orange-yellow-crayola);
     font-size: 18px;
 }
 
@@ -1144,7 +1144,24 @@ textarea.form-input::-webkit-realizer {
     background: var(--bg-gradient-jet);
 }
 
-
+.link-btn{
+    position: relative;
+    width: 100%;
+    background: var(--border-gradient-onyx);
+    color: var(--orange-yellow-crayola);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    box-shadow: var(--shadow3);
+    color: var(--white1);
+    background: var(--onyx);
+    font-size: var(--fs8);
+    font-weight: var(--fw300);
+    width: max-content;
+    padding: 6px 6px;
+    border-radius: 8px;
+}
 
 /*MEDIA QUERIES*/
 
@@ -1221,6 +1238,9 @@ textarea.form-input::-webkit-realizer {
 
     .info-content .title {
         padding: 5px 10px;
+    }
+    .link-btn{
+        padding: 5px 6px;
     }
 
     .info-more-btn {
@@ -1603,7 +1623,7 @@ textarea.form-input::-webkit-realizer {
         max-height: max-content;
         height: 100%;
         margin-bottom: 0;
-        padding-top: 60px;
+        padding-top: 40px;
         z-index: 1;
     }
 
