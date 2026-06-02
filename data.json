@@ -32,10 +32,12 @@
             "end_date": null,
             "company": "Ambala IT",
             "responsibilities": [
-                "Enhanced Accounting software by adding new features and fixing bugs, improving report generation, ledger management, and financial workflows.",
-                "Developed and automated Accounting reports, including income statements, balance sheets, and expense summaries, ensuring accurate financial analysis and compliance.",
-                "Customized HR and Accounting modules to meet specific organizational requirements, optimizing performance and user experience.",
-                "Optimized ERP workflows for Accounting and HR, streamlining processes and improving overall system efficiency."
+                "Developed and maintained ERP applications focused on Accounting and Human Resource Management (HRM) modules, including financial workflows, reporting, payroll, and employee management.",
+                "Customized enterprise software solutions to meet client-specific business requirements and improve operational efficiency.",
+                "Played a key role in the development and maintenance of the YKK GA & Legal System.",
+                "Developed and supported attendance device integration solutions to streamline attendance management and reduce manual processing.",
+                "Delivered ongoing enhancements, bug fixes, and technical support for existing applications, ensuring system stability and continuous improvement.",
+                "Collaborated with cross-functional teams throughout the software development lifecycle, from requirements analysis to deployment and support."
             ]
         },
         {
@@ -44,11 +46,12 @@
             "end_date": "2024-06-30",
             "company": "Nano Information Technology (Nanosoft)",
             "responsibilities": [
-                "Leveraged my expertise in Laravel to craft web applications for seamless user experiences.",
-                "Collaborated with diverse teams, including project managers and designers, to implement features aligned with project goals using JavaScript, React.js, and AJAX.",
-                "Managed database design and performance using MySQL, optimizing queries and ensuring data integrity.",
-                "Utilized Git for version control, enabling efficient collaboration with fellow developers.",
-                "Pursued continuous learning to stay updated with the latest trends and best practices in Laravel and web development."
+                "Developed and maintained web applications using Laravel and PHP, delivering scalable and user-focused solutions.",
+                "Built interactive and responsive user interfaces using JavaScript, React.js, AJAX, HTML, and CSS.",
+                "Collaborated with cross-functional teams throughout the software development lifecycle, from requirements gathering to deployment.",
+                "Designed, optimized, and maintained MySQL databases to ensure data integrity and application performance.",
+                "Performed application maintenance, bug fixing, feature enhancements, and performance optimization.",
+                "Utilized Git for version control, code management, and effective team collaboration."
             ]
         },
         {
@@ -58,9 +61,7 @@
             "company": "One Sky Communications Limited",
             "responsibilities": [
                 "Provided technical support for ISP infrastructure, routers, and switches to end-users based on requirements.",
-                "Participated in on-call rotation schedule for nights and weekends.",
                 "Coordinated with the network operation team to ensure smooth rollout plans and service delivery.",
-                "Performed other duties and responsibilities as required and assigned."
             ]
         }
     ],
