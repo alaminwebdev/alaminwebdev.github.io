@@ -4,9 +4,17 @@
             "degree": "Bachelor of Science in Computer Science and Engineering",
             "passing_year": 2022,
             "session": "2017-2021",
-            "institute": "Daffodil Institute of IT (DIIT)",
+            "institute": "Daffodil Institute of IT (DIIT), Dhaka",
             "type": "Education",
-            "description": "Daffodil Institute of IT (DIIT) became affiliated to the National University for conducting the BSc (Professional) in Computer Science and BBA programs."
+            "description": "BSc (Professional) affiliated with National University — CGPA: 3.18. Focused on software engineering, database design, and modern web application development."
+        },
+        {
+            "degree": "Professional Web Design & Development",
+            "passing_year": 2022,
+            "session": "2021-2022",
+            "institute": "Creative IT Institute, Dhaka",
+            "type": "Training",
+            "description": "Hands-on professional training in modern full-stack web application development and responsive interface design."
         },
         {
             "degree": "Higher Secondary Certificate (HSC)",
@@ -14,15 +22,7 @@
             "session": "2015-2016",
             "institute": "Patuakhali Government College",
             "type": "Education",
-            "description": "Patuakhali Government College is a educational institution in Patuakhali district of Barisal division."
-        },
-        {
-            "degree": "Professional Web Design & Development",
-            "passing_year": 2022,
-            "session": "2021-2022",
-            "institute": "Creative IT Institute , Dhaka",
-            "type": "Training",
-            "description": "Creative IT is an institution where empowering the community with an excellent standard of learning is what they desire. They endeavour for the continuous improvement of their leaders who will work to construct a better future."
+            "description": "Science group — Barisal Division."
         }
     ],
     "EXPERIENCE": [
@@ -32,12 +32,11 @@
             "end_date": null,
             "company": "Ambala IT",
             "responsibilities": [
-                "Developed and maintained ERP applications focused on Accounting and Human Resource Management (HRM) modules, including financial workflows, reporting, payroll, and employee management.",
-                "Customized enterprise software solutions to meet client-specific business requirements and improve operational efficiency.",
-                "Played a key role in the development and maintenance of the YKK GA & Legal System.",
-                "Developed and supported attendance device integration solutions to streamline attendance management and reduce manual processing.",
-                "Delivered ongoing enhancements, bug fixes, and technical support for existing applications, ensuring system stability and continuous improvement.",
-                "Collaborated with cross-functional teams throughout the software development lifecycle, from requirements analysis to deployment and support."
+                "Develop and maintain enterprise and ERP applications covering Accounting, Human Resource Management (HRM), Payroll, procurement, reporting, and business workflows.",
+                "Develop and customize application features based on client requirements and operational processes.",
+                "Contribute to enterprise systems including YKK General Affairs and Legal Management, procurement, and attendance integration solutions.",
+                "Deliver new features, bug fixes, performance improvements, and technical support to maintain application reliability.",
+                "Collaborate across requirements analysis, development, testing, deployment, and post-deployment support."
             ]
         },
         {
@@ -46,22 +45,21 @@
             "end_date": "2024-06-30",
             "company": "Nano Information Technology (Nanosoft)",
             "responsibilities": [
-                "Developed and maintained web applications using Laravel and PHP, delivering scalable and user-focused solutions.",
-                "Built interactive and responsive user interfaces using JavaScript, React.js, AJAX, HTML, and CSS.",
-                "Collaborated with cross-functional teams throughout the software development lifecycle, from requirements gathering to deployment.",
-                "Designed, optimized, and maintained MySQL databases to ensure data integrity and application performance.",
-                "Performed application maintenance, bug fixing, feature enhancements, and performance optimization.",
-                "Utilized Git for version control, code management, and effective team collaboration."
+                "Developed and maintained web applications using PHP and Laravel for business and enterprise requirements.",
+                "Built responsive user interfaces using JavaScript, React, AJAX, HTML, CSS, and Bootstrap.",
+                "Designed, optimized, and maintained MySQL databases to support data integrity and application performance.",
+                "Developed new features, resolved application issues, and performed system maintenance and performance optimization.",
+                "Used Git for version control, code management, and team collaboration."
             ]
         },
         {
-            "designation": "Executive - Support Engineer",
-            "start_date": "2022-09-02",
+            "designation": "Executive — Support Engineer",
+            "start_date": "2022-09-01",
             "end_date": "2023-02-28",
             "company": "One Sky Communications Limited",
             "responsibilities": [
-                "Provided technical support for ISP infrastructure, routers, and switches to end-users based on requirements.",
-                "Coordinated with the network operation team to ensure smooth rollout plans and service delivery.",
+                "Provided technical support for network infrastructure and end-user connectivity issues.",
+                "Assisted with network operations, troubleshooting, and equipment configuration."
             ]
         }
     ],
@@ -77,10 +75,10 @@
         "dob": "1998/10/25"
     },
     "BIO": {
-        "short_bio": "Dedicated software engineer based in Dhaka, creating dynamic and user-friendly applications that drive innovation.",
-        "long_bio": "I'm Md. Al Amin, a software engineer at Ambala IT. I specialize in Laravel, JavaScript, and MySQL, delivering efficient and user-focused web applications.",
-        "description": "👋 Hi, I'm Md. Al Amin, a passionate Software Engineer at Ambala IT, dedicated to building seamless and user-friendly web applications.<br><br>💻 <strong>Back-end Expertise:</strong> Specializing in PHP and Laravel to develop robust and scalable applications.<br><br>🎨 <strong>Front-end Skills:</strong> Proficient in JavaScript and Vue.js, creating interactive and dynamic user interfaces.<br><br> 🚀 <strong>Modern Tools:</strong> Experienced with Inertia.js and Vite for efficient and high-performance development.<br><br> 🗃️ <strong>Database Management:</strong> Skilled in MySQL, ensuring data integrity and optimal performance.<br><br>⚡ <strong>Dynamic Web Development:</strong> Mastering AJAX for responsive and real-time user experiences.",
-        "career_summary": "🎓 I graduated with a Bachelor of Science in Computer Science and Engineering from Daffodil Institute of IT in 2022. Since then, I have worked across multiple roles, currently as a Software Engineer at Ambala IT, where I specialize in back-end and front-end development using PHP, Laravel, Vue.js, and MySQL.<br><br> 💼 Previously, I worked as a Full-Stack Web Developer at Nano Information Technology (Nanosoft) and as a Support Engineer at One Sky Communications Limited, gaining extensive experience in both web development and technical support. 🌱",
-        "projects": "📌 These are some of the key projects I have worked on: <br><br>💼 <strong>ERP Application:</strong> A comprehensive business management solution integrating finance, HR, and operations.<br><br> 🚀 <strong>BRAC SELP:</strong> A platform for social empowerment and legal protection.<br><br> 📦 <strong>SB Inventory:</strong> A solution for tracking stock, sales, and business analytics."
+        "short_bio": "Software Engineer with 4+ years of experience specializing in Laravel, React, TypeScript, and enterprise ERP & workflow automation.",
+        "long_bio": "I'm Md. Al Amin, a Software Engineer with 4+ years of professional experience developing and maintaining web-based and enterprise applications. I specialize in PHP, Laravel, JavaScript, TypeScript, React, Vue.js, and MySQL — architecting solutions for ERP, procurement (P2P), accounting, HRM, biometric attendance integrations, and business workflow automation.",
+        "description": "👋 Hi, I'm Md. Al Amin, a passionate Software Engineer specializing in Laravel & React, dedicated to building seamless and user-friendly enterprise web applications.<br><br>💻 <strong>Back-end Expertise:</strong> Specializing in PHP, Laravel, and Python to develop robust and scalable applications.<br><br>⚛️ <strong>Front-end Skills:</strong> Proficient in React.js, Vue.js, Inertia.js, TypeScript, Redux Toolkit, and JavaScript.<br><br>🚀 <strong>Modern Tools:</strong> Experienced with Vite, Docker, Postman, Composer, and Git.<br><br>🗃️ <strong>Database Management:</strong> Skilled in MySQL, database design, and query optimization.<br><br>⚡ <strong>Workflow Automation & Integration:</strong> Enterprise ERP, procurement (P2P), attendance biometric middleware, and REST APIs.",
+        "career_summary": "🎓 I graduated with a Bachelor of Science in Computer Science and Engineering from Daffodil Institute of IT in 2022 (CGPA: 3.18). Since then, I have worked across multiple roles, currently as a Software Engineer at Ambala IT, where I specialize in back-end and front-end development using PHP, Laravel, React, TypeScript, and MySQL.<br><br>💼 Previously, I worked as a Full-Stack Web Developer at Nano Information Technology (Nanosoft) and as a Support Engineer at One Sky Communications Limited, gaining extensive experience in web development and technical infrastructure. 🌱",
+        "projects": "📌 Key projects I have built and contributed to:<br><br>📦 <strong>YKK Procurement System:</strong> Enterprise Procure-to-Pay (P2P) platform built with React, TypeScript, Redux Toolkit, and Laravel.<br><br>⚖️ <strong>YKK GA & Legal:</strong> General affairs, expatriate logistics, and legal workflow automation.<br><br>📡 <strong>Attendance Device Management System:</strong> ZKTeco biometric middleware and synchronization server.<br><br>💼 <strong>ERP Application (MicrofinPlus):</strong> Comprehensive enterprise accounting and HRM solution."
     }
 }
