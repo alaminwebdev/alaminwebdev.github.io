@@ -241,7 +241,7 @@ const DATA = {
   SOCIAL: {
     github: "https://github.com/alaminwebdev",
     linkedin: "https://www.linkedin.com/in/mdalamin1998/",
-    facebook: "https://www.facebook.com/mohammadalamin.dev",
+    facebook: "https://www.facebook.com/mr.mo.alamin",
   },
 
   CONTACT: {
