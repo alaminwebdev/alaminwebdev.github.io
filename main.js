@@ -399,6 +399,8 @@ function showSection(id, btn) {
   sec.style.animation = "";
   // Activate clicked button
   btn.classList.add("active");
+  // Ensure glossy card interactions are attached
+  initGlossyCards();
 }
 
 /* ══════════════════════════════════════════════════
@@ -412,25 +414,6 @@ function toggleTheme() {
   const lbl = $id("ttLbl");
   if (thumb) thumb.textContent = isDark ? "🌙" : "☀️";
   if (lbl) lbl.textContent = isDark ? "Light" : "Dark";
-}
-
-/* ══════════════════════════════════════════════════
-   CONTACT FORM — send feedback
-══════════════════════════════════════════════════ */
-function handleSend(btn) {
-  btn.textContent = "Sending…";
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = "✓ Message Sent!";
-    btn.style.borderColor = "var(--green)";
-    btn.style.color = "var(--green)";
-    setTimeout(() => {
-      btn.textContent = "Send Message →";
-      btn.style.borderColor = "";
-      btn.style.color = "";
-      btn.disabled = false;
-    }, 3000);
-  }, 1200);
 }
 
 /* ══════════════════════════════════════════════════
@@ -958,70 +941,412 @@ function buildContact() {
   const sec = $id("contact");
   const C = DATA.CONTACT;
   const S = DATA.SOCIAL;
-
-  const infoItems = [
-    { label: "✉ Email", value: C.email },
-    { label: "📞 Phone", value: fmtPhone(C.phone) },
-    { label: "📍 Location", value: C.location + " · Remote OK" },
-    { label: "🐙 GitHub", value: S.github?.replace("https://", "") },
-    { label: "💼 LinkedIn", value: S.linkedin?.replace("https://", "") },
-    { label: "📘 Facebook", value: S.facebook?.replace("https://", "") },
-  ].filter((i) => i.value);
-
-  const infoHTML =
-    infoItems
-      .map(
-        (i) => `
-    <div class="cic">
-      <div class="cic-l">${i.label}</div>
-      <div class="cic-v">${i.value}</div>
-    </div>
-  `,
-      )
-      .join("") +
-    `
-    <div class="cic ok">
-      <div class="cic-l">● Availability</div>
-      <div class="cic-v">Open to new opportunities</div>
-    </div>
-  `;
+  const cleanPhone = C.phone.replace(/[^0-9]/g, "");
 
   sec.innerHTML = `
     <div class="sh">
-      <div class="sh-eye">// Get In Touch</div>
+      <div class="sh-eye">// Direct Inquiries &amp; Collaboration</div>
       <h1 class="sh-title">Contact <em>Me</em></h1>
       <div class="sh-line"></div>
     </div>
 
-    <div class="cl">
-      <div class="ci-list">${infoHTML}</div>
+    <div class="bento">
 
-      <div class="fc">
-        <div class="fr">
-          <div class="fg" style="margin-bottom:0">
-            <label class="fl">Your Name</label>
-            <input class="fi" type="text" placeholder="John Doe">
+      <!-- 1. Contact Hero Card (Span 7) -->
+      <div class="bc c7 contact-hero">
+        <div class="hero-top-group">
+          <div class="hero-eye">// Direct Collaboration &amp; Inquiries</div>
+          <div class="hero-h">Let's build something <em>extraordinary</em> together.</div>
+          <p class="hero-p">
+            Whether you need an enterprise ERP architect, a scalable full-stack web application (Laravel, React, TypeScript, Vue), or robust hardware middleware integration, I bring clean engineering, scalable design, and proactive communication.
+          </p>
+        </div>
+
+        <!-- Middle Value Metrics (Eliminates empty space) -->
+        <div class="hero-metrics-row">
+          <div class="hm-pillar">
+            <span class="hm-num">4+</span>
+            <span class="hm-label">Years Experience</span>
+            <span class="hm-sub">Laravel, React, ERP</span>
           </div>
-          <div class="fg" style="margin-bottom:0">
-            <label class="fl">Email Address</label>
-            <input class="fi" type="email" placeholder="john@example.com">
+          <div class="hm-pillar">
+            <span class="hm-num">17+</span>
+            <span class="hm-label">Production Projects</span>
+            <span class="hm-sub">Enterprise &amp; Web</span>
+          </div>
+          <div class="hm-pillar">
+            <span class="hm-num">&lt; 2h</span>
+            <span class="hm-label">Turnaround Time</span>
+            <span class="hm-sub">Fast, Clear Comm</span>
           </div>
         </div>
-        <div class="fg">
-          <label class="fl">Subject</label>
-          <input class="fi" type="text" placeholder="Project inquiry...">
+
+        <div class="hero-bottom-group">
+          <div class="contact-quick-actions">
+            <a href="mailto:${C.email}?subject=Project%20Inquiry%20%E2%80%94%20Md.%20Al%20Amin" class="c-btn c-btn-primary">
+              <span>✉️</span> Compose Email
+            </a>
+            <a href="https://wa.me/${cleanPhone}?text=Hi%20Al%20Amin,%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="c-btn c-btn-secondary">
+              <span>💬</span> WhatsApp Message
+            </a>
+          </div>
+
+          <div class="tags" style="margin-top: 14px;">
+            <span class="tag">Enterprise Software</span>
+            <span class="tag">Laravel &amp; React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Procure-to-Pay (P2P)</span>
+            <span class="tag">Remote / On-site OK</span>
+          </div>
         </div>
-        <div class="fg">
-          <label class="fl">Message</label>
-          <textarea class="fta" placeholder="Tell me about your project or idea..."></textarea>
-        </div>
-        <button class="btn-s" id="sendBtn">Send Message →</button>
       </div>
+
+      <!-- 2. Status & Live Timezone Card (Span 5) -->
+      <div class="bc c5 contact-status-card">
+        <div class="status-card-inner">
+
+          <!-- Top Status Row -->
+          <div class="status-top-row">
+            <div class="c-live-badge">
+              <span class="live-radar">
+                <span class="radar-ping"></span>
+                <span class="radar-dot"></span>
+              </span>
+              <span>Available for Hire</span>
+            </div>
+            <span class="status-contract-pill">Remote / Full-Time</span>
+          </div>
+
+          <!-- Heading Group -->
+          <div class="status-heading-group">
+            <h3 class="status-title">Open to <em>New Roles</em><br>&amp; Collaborations</h3>
+            <p class="status-desc">
+              Ready to take on senior engineering roles, enterprise ERP challenges, or technical consulting contracts.
+            </p>
+          </div>
+
+          <!-- Current Position Glass Chip -->
+          <div class="current-role-card">
+            <div class="cr-icon">💼</div>
+            <div class="cr-info">
+              <span class="cr-label">Current Role</span>
+              <div class="cr-title">Software Engineer · <strong>Ambala IT</strong></div>
+            </div>
+            <span class="cr-status-tag">Active</span>
+          </div>
+
+          <!-- Micro Metrics Grid -->
+          <div class="status-metrics-grid">
+            <div class="sm-card">
+              <div class="sm-header">
+                <span class="sm-icon">📍</span>
+                <span class="sm-label">Location</span>
+              </div>
+              <div class="sm-value">Dhaka, Bangladesh</div>
+              <div class="sm-sub">GMT+6 · Remote OK</div>
+            </div>
+
+            <div class="sm-card">
+              <div class="sm-header">
+                <span class="sm-icon">🕒</span>
+                <span class="sm-label">Local Time</span>
+              </div>
+              <div class="sm-value" id="contactLocalTime">Dhaka (GMT+6)</div>
+              <div class="sm-sub">Asia/Dhaka Zone</div>
+            </div>
+
+            <div class="sm-card sm-full">
+              <div class="sm-header">
+                <span class="sm-icon">⚡</span>
+                <span class="sm-label">Turnaround Commitment</span>
+              </div>
+              <div class="sm-speed-badge">
+                <span class="speed-pulse-dot"></span>
+                <span>Fast Response — Usually within 1–2 hours</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 3. Channel: Email -->
+      <div class="bc c6 ch-card">
+        <div>
+          <div class="ch-card-top">
+            <div class="ch-icon-wrap">
+              <span>✉️</span>
+            </div>
+            <div class="ch-info">
+              <span class="ch-eyebrow">Primary Inbox</span>
+              <h4 class="ch-title">Direct Email</h4>
+              <div class="ch-val">${C.email}</div>
+            </div>
+          </div>
+          <p class="ch-desc">
+            Best for detailed project requirements, enterprise proposals, and career opportunities.
+          </p>
+        </div>
+        <div class="ch-actions">
+          <a href="mailto:${C.email}?subject=Inquiry%20via%20Portfolio" class="ch-act-btn ch-act-primary">
+            <span>✉️ Open Mail Client ↗</span>
+          </a>
+          <button class="ch-act-btn ch-act-secondary copy-btn" data-copy="${C.email}" title="Copy email address">
+            <span>📋</span>
+            <span class="copy-lbl">Copy Email</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. Channel: WhatsApp & Phone -->
+      <div class="bc c6 ch-card">
+        <div>
+          <div class="ch-card-top">
+            <div class="ch-icon-wrap">
+              <span>💬</span>
+            </div>
+            <div class="ch-info">
+              <span class="ch-eyebrow">Instant Chat &amp; Voice</span>
+              <h4 class="ch-title">WhatsApp &amp; Phone</h4>
+              <div class="ch-val">${fmtPhone(C.phone)}</div>
+            </div>
+          </div>
+          <p class="ch-desc">
+            Ideal for quick discussions, instant WhatsApp messaging, or scheduling an intro call.
+          </p>
+        </div>
+        <div class="ch-actions">
+          <a href="https://wa.me/${cleanPhone}?text=Hello%20Al%20Amin,%20I%20saw%20your%20portfolio" target="_blank" rel="noopener noreferrer" class="ch-act-btn ch-act-whatsapp">
+            <span>💬 WhatsApp Chat ↗</span>
+          </a>
+          <a href="tel:${C.phone}" class="ch-act-btn ch-act-secondary">
+            <span>📞 Call</span>
+          </a>
+          <button class="ch-act-btn ch-act-secondary copy-btn" data-copy="${C.phone}" title="Copy phone number">
+            <span>📋</span>
+            <span class="copy-lbl">Copy</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 5. Channel: LinkedIn -->
+      <div class="bc c6 ch-card">
+        <div>
+          <div class="ch-card-top">
+            <div class="ch-icon-wrap">
+              <span>💼</span>
+            </div>
+            <div class="ch-info">
+              <span class="ch-eyebrow">Professional Network</span>
+              <h4 class="ch-title">LinkedIn Profile</h4>
+              <div class="ch-val">${S.linkedin.replace("https://www.", "").replace("https://", "")}</div>
+            </div>
+          </div>
+          <p class="ch-desc">
+            Connect professionally, explore endorsements, and message me directly via LinkedIn InMail.
+          </p>
+        </div>
+        <div class="ch-actions">
+          <a href="${S.linkedin}" target="_blank" rel="noopener noreferrer" class="ch-act-btn ch-act-primary">
+            <span>Connect on LinkedIn ↗</span>
+          </a>
+          <button class="ch-act-btn ch-act-secondary copy-btn" data-copy="${S.linkedin}" title="Copy LinkedIn profile link">
+            <span>📋</span>
+            <span class="copy-lbl">Copy Link</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 6. Channel: GitHub -->
+      <div class="bc c6 ch-card">
+        <div>
+          <div class="ch-card-top">
+            <div class="ch-icon-wrap">
+              <span>🐙</span>
+            </div>
+            <div class="ch-info">
+              <span class="ch-eyebrow">Repositories &amp; Code</span>
+              <h4 class="ch-title">GitHub Profile</h4>
+              <div class="ch-val">${S.github.replace("https://github.com/", "@")}</div>
+            </div>
+          </div>
+          <p class="ch-desc">
+            Review public source code, modular architecture patterns, and open-source contributions.
+          </p>
+        </div>
+        <div class="ch-actions">
+          <a href="${S.github}" target="_blank" rel="noopener noreferrer" class="ch-act-btn ch-act-primary">
+            <span>Visit GitHub ↗</span>
+          </a>
+          <button class="ch-act-btn ch-act-secondary copy-btn" data-copy="${S.github}" title="Copy GitHub profile link">
+            <span>📋</span>
+            <span class="copy-lbl">Copy Link</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 7. Specialization Scope (Span 7) -->
+      <div class="bc c7">
+        <div class="hero-eye">// Engineering Scope</div>
+        <h4 style="font-family:'Syne',sans-serif; font-size:20px; font-weight:700; color:var(--text); margin-bottom:14px;">
+          What I Bring to Your Team &amp; Project
+        </h4>
+        <div class="c-scope-grid">
+          <div class="c-scope-item">
+            <div class="c-scope-ico">🏭</div>
+            <div>
+              <div class="c-scope-title">Enterprise ERP &amp; P2P Workflows</div>
+              <div class="c-scope-desc">Procure-to-Pay pipelines, HRM, Payroll, dynamic approvals, and multi-currency accounting.</div>
+            </div>
+          </div>
+          <div class="c-scope-item">
+            <div class="c-scope-ico">💻</div>
+            <div>
+              <div class="c-scope-title">Full-Stack Application Architecture</div>
+              <div class="c-scope-desc">Robust web platforms engineered with Laravel, React.js, TypeScript, Vue.js, and Inertia.</div>
+            </div>
+          </div>
+          <div class="c-scope-item">
+            <div class="c-scope-ico">📡</div>
+            <div>
+              <div class="c-scope-title">Hardware &amp; Biometric Middleware</div>
+              <div class="c-scope-desc">ZKTeco/ADMS attendance synchronization, TCP/IP device protocols, and async queues.</div>
+            </div>
+          </div>
+          <div class="c-scope-item">
+            <div class="c-scope-ico">🗃️</div>
+            <div>
+              <div class="c-scope-title">Database Design &amp; Optimization</div>
+              <div class="c-scope-desc">Complex relational schema modeling, MySQL query indexing, and scalable REST APIs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Verified CV Card (Span 5) -->
+      <div class="bc c5 cv-showcase-card">
+        <div class="stat-inner" style="height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="hero-eye">// Verified Documentation</div>
+            <h4 style="font-family:'Syne',sans-serif; font-size:20px; font-weight:700; color:var(--text); margin-bottom:8px;">
+              Curriculum Vitae
+            </h4>
+            <p style="font-size:13px; color:var(--text2); line-height:1.65; margin-bottom:16px;">
+              Need an offline copy of my engineering track record, enterprise achievements, and credentials? View or download the official PDF.
+            </p>
+
+            <div class="cv-badge-row">
+              <span class="cv-pill">📄 PDF Document</span>
+              <span class="cv-pill">✓ Verified</span>
+              <span class="cv-pill">4+ Yrs Exp</span>
+            </div>
+          </div>
+
+          <div class="cv-card-actions">
+            <a href="Md_Al_Amin_Software_Engineer_CV.pdf" target="_blank" class="c-btn c-btn-primary" style="width:100%; justify-content:center;">
+              <span>📄</span> View CV in Browser ↗
+            </a>
+            <a href="Md_Al_Amin_Software_Engineer_CV.pdf" download class="c-btn c-btn-secondary" style="width:100%; justify-content:center;">
+              <span>⬇</span> Download Official CV
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   `;
 
-  // Attach send button listener after innerHTML is set
-  $id("sendBtn").addEventListener("click", function () {
-    handleSend(this);
+  // Attach interactive clipboard copy handlers
+  attachCopyHandlers();
+
+  // Initialize and update local time clock
+  updateContactLocalTime();
+
+  // Initialize glossy mouse-move reflections
+  initGlossyCards();
+}
+
+/** Attach copy to clipboard functionality with visual confirmation */
+function attachCopyHandlers() {
+  document.querySelectorAll(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", async function () {
+      const text = this.getAttribute("data-copy");
+      if (!text) return;
+
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (err) {
+        // Fallback for older browsers
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      }
+
+      const labelEl = this.querySelector(".copy-lbl");
+      const origText = labelEl ? labelEl.textContent : this.textContent;
+
+      this.classList.add("copied");
+      if (labelEl) labelEl.textContent = "Copied! ✓";
+
+      setTimeout(() => {
+        this.classList.remove("copied");
+        if (labelEl) labelEl.textContent = origText;
+      }, 2000);
+    });
+  });
+}
+
+/** Update the Dhaka (UTC+6) live time display in the contact card */
+function updateContactLocalTime() {
+  const el = $id("contactLocalTime");
+  if (!el) return;
+
+  function refresh() {
+    try {
+      const timeStr = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Dhaka",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      }).format(new Date());
+      el.textContent = `${timeStr} (BST · UTC+6)`;
+    } catch (e) {
+      el.textContent = "Dhaka (UTC+6)";
+    }
+  }
+
+  refresh();
+}
+
+/** Glossy mouse-following reflection strictly contained inside hovered card */
+function initGlossyCards() {
+  const cards = document.querySelectorAll(".bc, .ch-card, .pcard");
+  cards.forEach((card) => {
+    if (card._hasGlossyListener) return;
+    card._hasGlossyListener = true;
+
+    card.addEventListener("mouseenter", (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+    });
+
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.setProperty("--mouse-x", "-999px");
+      card.style.setProperty("--mouse-y", "-999px");
+    });
   });
 }
